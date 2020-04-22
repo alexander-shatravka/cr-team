@@ -1,0 +1,8 @@
+// Opacity
+@mixin shape-default($shape-width, $shape-height, $shape-color) {
+  content: '';
+  display: block;
+  width: $shape-width;
+  height: $shape-height;
+  background: $shape-color;
+}

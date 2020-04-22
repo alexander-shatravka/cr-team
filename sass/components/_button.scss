@@ -1,0 +1,73 @@
+.main-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $gray-dark;
+  color: $white;
+  text-transform: uppercase;
+  font-weight: 800;
+  max-width: 250px;
+  padding: 10px 20px 10px;
+  font-size: 14px;
+  text-transform: uppercase;
+  border-radius: 8px;
+  transition: 0.5s all;
+  border: 2px solid $gray-dark;
+
+  &.shadow {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  &.hover-yellow {
+    &:hover {
+      background-color: $yellow;
+      border-color: $yellow;
+    }
+  }
+
+  &.hover-white {
+    &:hover {
+      background-color: $white;
+      border-color: $gray-dark;
+    }
+  }
+}
+
+@keyframes circle-small-scale {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+.btn-video {
+  display: block;
+  height: 75px;
+  width: 75px;
+
+  svg {
+    animation: none;
+    animation-timing-function: cubic-bezier(0.6, 0, 0.4, 1);
+    animation: circle-small-scale 2.0s ease-in-out infinite alternate;
+
+    path {
+      transition: fill 0.3s;
+    }
+  }
+
+  &:hover {
+    svg {
+      path {
+        fill: $yellow;
+      }
+    }
+  }
+
+  &:hover {
+    animation: circle-small-scale 0.5s ease-in-out infinite alternate;
+
+
+  }
+}
