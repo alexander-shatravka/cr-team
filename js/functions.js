@@ -1,6 +1,8 @@
 $(document).ready(function() {
     initVideoSliders();
     setTimeout(initVideoSliderButtonPrev,100);
+    initFormCustomFocus();
+    initFormCustomPlaceholder();
 });
 
 function initVideoSliders() {
@@ -39,5 +41,23 @@ function initVideoSliderButtonPrev() {
         $('.video-btn-prev').show();
         $('.btn-video').show();
     });
+}
+
+function initFormCustomFocus() {
+    $('.brief-form input').on('blur', function () {
+        $('.input-wrapper').removeClass('focused');
+        if($(this).val()){
+            $(this).parents('.input-wrapper').find('.placeholder').addClass('hide');
+        }
+        else {
+            $(this).parents('.input-wrapper').find('.placeholder').removeClass('hide');
+        }
+    });
+    $('.brief-form input').on('focus', function () {
+        $(this).parents('.input-wrapper').addClass('focused');
+    })
+}
+
+function initFormCustomPlaceholder() {
 
 }

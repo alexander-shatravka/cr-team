@@ -763,6 +763,10 @@
   padding: 0;
 }
 
+.services-head-section {
+  padding: 0;
+}
+
 .services-row {
 
   .services-img-left {
@@ -777,9 +781,12 @@
     width: 100%;
     max-width: 44%;
     margin-left: 33%;
+    padding-top: 80px;
+    padding-bottom: 100px;
 
     .service-title {
       font-size: 96px;
+      margin-bottom: 90px;
     }
 
     .small-p {
