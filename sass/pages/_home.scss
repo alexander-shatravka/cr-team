@@ -4,13 +4,14 @@
 }
 
 .intro-section {
-  padding-top: 192px;
+  padding-top: 170px;
   padding-bottom: 0;
 
   .intro-shapes {
     position: absolute;
     right: 0;
-    top: -50px;
+    top: -79px;
+    z-index: -1;
   }
 
   .container {
@@ -39,32 +40,43 @@
 
 .intro-img {
   background: $yellow;
-  max-width: 1400px;
+  max-width: 64%;
+  position: relative;
 
   img {
     height: auto;
     width: auto;
     display: inherit;
   }
+
+  //&:before {
+  //  @include shape-default(62.83%, 108%, $yellow);
+  //  position: absolute;
+  //  left: 50%;
+  //  bottom: 0;
+  //  z-index: -2;
+  //}
+
 }
 
 .intro-txt {
   position: absolute;
-  left: 1300px;
-  width: 350px;
-  top: 250px;
+  right: 50px;
+  top: 230px;
 
   .intro-title {
-    font-size: 110px;
+    font-size: 166px;
     line-height: 1.0;
+    margin-bottom: 40px;
   }
 
   .intro-subtitle {
-    font-size: 72px;
+    font-size: 96px;
     text-transform: uppercase;
     font-weight: bold;
     font-family: $second-font-family;
     line-height: 1.0;
+    margin-bottom: 0;
   }
 
   .intro-moto {
@@ -96,6 +108,7 @@
   }
 
   .main-btn {
+    margin-top: 10px;
     padding-left: 40px;
     padding-right: 40px;
   }
@@ -137,32 +150,26 @@
 }
 
 .intro-bottom-section {
+  padding-bottom: 80px;
   .container {
     position: relative;
   }
   .intro-bottom-shapes {
-    left: 50%;
-    top: 50px;
-    transform: translateX(-570px);
+    left: 0;
+    top: 0;
+    width: 100%;
   }
 }
 
 .intro-bottom {
-  padding-top: 100px;
   position: relative;
-  border-left: 28px solid $yellow;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-
-  &:before {
-    @include shape-default(100%, 280px, $yellow);
-    max-width: 1318px;
-    position: absolute;
-    left: 0;
-    z-index: -1;
-    top: 139px;
-  }
+  flex-wrap: wrap;
+  padding-left: 210px;
+  padding-top: 10px;
+  max-width: 88%;
 
   .h5 {
     font-family: $base-font-family;
@@ -177,8 +184,28 @@
   }
 
   .small-p {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    .h6 {
+      font-size: 96px;
+      padding-bottom: 10px;
+      border-bottom: 6px solid $black;
+      font-family: $second-font-family;
+      margin-right: 90px;
+      margin-bottom: 0;
+
+      &:after {
+        display: none;
+      }
+    }
+
     p {
       font-size: 16px;
+      flex-basis: 50%;
+      max-width: 500px;
+      padding-top: 10px;
 
       strong {
         font-size: 20px;
@@ -267,49 +294,9 @@
 }
 
 .intro-bottom-title {
-  padding-left: 240px;
-  padding-top: 150px;
   position: relative;
-
-  h2 {
-    font-size: 96px;
-    max-width: 1210px;
-    margin-bottom: 0;
-    position: relative;
-    line-height: 1.0;
-    position: relative;
-    transform: translateX(-70px);
-
-    &:before {
-      @include shape-default(1235px, 88px, $yellow);
-      position: absolute;
-      left: 565px;
-      top: -25px;
-      z-index: -1;
-    }
-
-    &:after {
-      @include shape-default(224px, 192px, $yellow);
-      position: absolute;
-      left: 1520px;
-      top: 0;
-      z-index: -1;
-    }
-  }
-
-  &:before {
-    @include shape-default(47px, 16px, $black);
-    position: absolute;
-    right: 320px;
-    bottom: 45px;
-  }
-
-  &:after {
-    @include shape-default(339px, 16px, $black);
-    position: absolute;
-    right: -40px;
-    bottom: 45px;
-  }
+  margin-bottom: 60px;
+  font-size: 205px;
 }
 
 .video-section-1 {
@@ -794,5 +781,14 @@
         padding-right: 50px;
       }
     }
+  }
+}
+
+.service-section {
+  position: relative;
+
+  .section-shapes {
+    top: 0;
+    z-index: -1;
   }
 }
