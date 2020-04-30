@@ -370,6 +370,7 @@
 }
 
 .brief-intro-2 {
+
   .event-img {
     &:after {
       display: none;
@@ -377,7 +378,7 @@
   }
 
   .brief-intro-bottom-block {
-    margin-top: 0;
+    margin-top: 0!important;
     padding: 80px 100px 50px 0;
 
     .brief-intro-bottom-title {

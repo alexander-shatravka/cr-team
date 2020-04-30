@@ -1,9 +1,41 @@
 $(document).ready(function() {
+    initFixedHeader();
     initVideoSliders();
     setTimeout(initVideoSliderButtonPrev,100);
     initFormCustomFocus();
     initFormCustomPlaceholder();
+    initSrollUpCtaButton();
 });
+
+function initFixedHeader() {
+    var fixedItem = jQuery("header"),
+        win = jQuery(window);
+    win.on('load resize scroll', function(e){
+        var winTop = win.scrollTop();
+        if($(window).width()>768){
+            if(winTop && winTop > 50) {
+                fixedItem.addClass("fixed");
+            }else {
+                fixedItem.removeClass("fixed");
+            }
+            pointRemember = winTop;
+        }
+        // else fixedItem.addClass("slideUp");
+    });
+}
+
+function initSrollUpCtaButton() {
+    var lastScrollTop = 0;
+    $(window).scroll(function(event){
+        var st = $(this).scrollTop();
+        if (st > lastScrollTop){
+            $('.header-cta-block').removeClass('show');
+        } else {
+            $('.header-cta-block').addClass('show');
+        }
+        lastScrollTop = st;
+    });
+}
 
 function initVideoSliders() {
     $('.video-inner-slider').slick({

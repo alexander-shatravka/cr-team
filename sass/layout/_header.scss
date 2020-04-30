@@ -1,65 +1,144 @@
 .header {
-  margin-top: 60px;
+  margin-top: 0px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 0 32px;
+  z-index: 10;
+  background: transparent;
+  transition: all 0.3s ease;
+
+  &.fixed {
+    padding: 0;
+
+    .logo {
+      margin-top: 0;
+    }
+
+    .header-cta-block {
+      transform: translateY(-105%);
+      transition: transform 0.3s ease;
+
+      &.show {
+        transform: translateY(0);
+      }
+    }
+
+    .main-nav {
+      background: $yellow;
+      flex-basis: 100%;
+      height: 63px;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+      li {
+        padding-top: 20px;
+
+        a {
+          color: $white;
+          font-size: 18px;
+
+          &.active {
+            color: $black;
+          }
+
+          &:after {
+            content: '';
+            display: block;
+            height: 5px;
+            width: 0;
+            bottom: 0;
+            left: 0;
+            transition: width 0.2s ease-in-out;
+            background: $black;
+          }
+
+          &:hover {
+            color: $black;
+            &:after {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    .header-cta-block {
+      .header-cta-text {
+        padding-top: 20px;
+        background: $yellow;
+      }
+    }
+  }
+
   .container {
     display: flex;
     justify-content: flex-start;
   }
   .logo {
     display: flex;
-    padding: 50px 0px;
+    padding: 20px 40px;
+    margin-top: 22px;
     justify-content: center;
     align-items: center;
     background: $yellow;
-    width: 190px;
-
+    height: 114px;
+    width: 160px;
   }
   .header-cta-block {
-    max-width: 350px;
-    padding-right: 30px;
-    padding-bottom: 20px;
+    padding: 0;
     display: flex;
-    border-right: 30px solid $yellow;
     flex-direction: column;
     justify-content: flex-start;
-    padding-left: 30px;
+    align-items: center;
+    position: relative;
+    flex-basis: 24%;
 
     .header-cta-text {
-      margin-bottom: 30px;
-      font-size: 24px;
-      font-weight: 800;
+      width: 100%;
+      max-height: 63px;
+      font-size: 21px;
+      font-weight: 700;
       text-transform: uppercase;
+      padding: 30px 0 30px 30px;
+      margin-bottom: 10px;
+    }
+
+    .main-btn {
+      min-width: 250px;
     }
   }
 
   .header-shapes {
-    left: 50%;
-    bottom: 70px;
+    left: 600px;
+    bottom: -7px;
   }
 
   .main-nav {
     width: 71%;
-    padding-left: 70px;
-    display: flex;
-    justify-content: space-between;
+    flex-basis: 100%;
+    padding-left: 100px;
 
     ul {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
-      align-items: flex-start;
-      justify-content: space-between;
+      align-items: center;
+      justify-content: flex-start;
       flex-basis: 100%;
       max-height: 70px;
 
       li {
+        padding-right: 60px;
+        padding-top: 30px;
+
         a {
-          font-size: 18px;
+          font-size: 21px;
           text-transform: uppercase;
-          font-weight: bold;
+          font-weight: 800;
           transition: 0.3s color;
           position: relative;
           display: block;
-          min-width: 80px;
 
           &.active {
             color: $yellow;

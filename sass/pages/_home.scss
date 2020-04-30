@@ -4,13 +4,13 @@
 }
 
 .intro-section {
-  padding-top: 0;
+  padding-top: 192px;
   padding-bottom: 0;
 
   .intro-shapes {
     position: absolute;
     right: 0;
-    top: 70px;
+    top: -50px;
   }
 
   .container {
@@ -39,7 +39,7 @@
 
 .intro-img {
   background: $yellow;
-  max-width: 1250px;
+  max-width: 1400px;
 
   img {
     height: auto;
@@ -50,22 +50,21 @@
 
 .intro-txt {
   position: absolute;
-  left: 1195px;
+  left: 1300px;
   width: 350px;
-  top: 150px;
+  top: 250px;
 
   .intro-title {
-    font-size: 64px;
+    font-size: 110px;
     line-height: 1.0;
   }
 
   .intro-subtitle {
-    font-size: 48px;
+    font-size: 72px;
     text-transform: uppercase;
     font-weight: bold;
     font-family: $second-font-family;
     line-height: 1.0;
-    margin-bottom: 0;
   }
 
   .intro-moto {
@@ -77,11 +76,11 @@
 
 .intro-cta-block {
   position: absolute;
-  right: 0;
+  left: 1420px;
   background: $yellow;
   height: 180px;
   width: 385px;
-  top: 525px;
+  top: 605px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -416,7 +415,7 @@
     display: block;
     background-color: $yellow;
     position: absolute;
-    left: 55px;
+    left: 30px;
     top: 280px;
     width: 50px;
     height: 585px;
