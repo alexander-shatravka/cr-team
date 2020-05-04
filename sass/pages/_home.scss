@@ -381,7 +381,7 @@
   }
 }
 
-.video-section-1 {
+.video-section {
   position: relative;
   background-size: cover;
   padding: 230px 0 230px 50px;
@@ -389,7 +389,8 @@
   max-width: 100%;
   overflow: hidden;
 
-  .slider-video-bg {
+  .slider-video-bg,
+  .slider-video-bg-2{
     position: absolute;
     left: 0;
     top: 0;
@@ -447,7 +448,8 @@
     }
   }
 
-  .video-btn-next {
+  .video-btn-next,
+  .video-btn-next-2 {
     background-color: $yellow;
     color: $black;
     display: flex;
@@ -455,7 +457,6 @@
     justify-content: space-between;
     padding: 30px 15px 20px 40px;
     width: 280px;
-    //position: relative;
 
     .next-text {
       font-size: 18px;
@@ -474,12 +475,14 @@
   }
 
   .slick-current {
-    .video-btn-next {
+    .video-btn-next,
+    .video-btn-next-2{
       display: flex!important;
     }
   }
 
-  .video-btn-prev {
+  .video-btn-prev,
+  .video-btn-prev-2 {
     display: block;
     background-color: $yellow;
     position: absolute;
@@ -518,33 +521,11 @@
   position: relative;
   padding-bottom: 0;
 
-  //&:after {
-  //  @include shape-default(190px, 288px, $yellow);
-  //  position: absolute;
-  //  right: 5px;
-  //  bottom: 200px;
-  //}
-
   .container {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
     transform: translateY(0);
-
-    //&:before {
-    //  @include shape-default(47px, 16px, $black);
-    //  position: absolute;
-    //  right: 150px;
-    //  bottom: 0px;
-    //}
-    //
-    //&:after {
-    //  @include shape-default(339px, 16px, $black);
-    //  position: absolute;
-    //  right: 115px;
-    //  transform: translateX(100%);
-    //  bottom: 0;
-    //}
   }
 
   .event-title-column {
@@ -785,10 +766,89 @@
     padding-top: 0!important;
 
     .service-title {
-      padding-top: 100px;
+      margin-top: 100px;
     }
   }
+}
 
+.service-title {
+  position: relative;
+  display: inline-block;
+  &:after {
+    @include shape-default(218px, 29px, $yellow);
+    position: absolute;
+    right: 40px;
+    top: 7px;
+    z-index: -1;
+  }
+
+  &.service-title-2 {
+    &:after {
+      height: 90px;
+      width: 167px;
+      left: -50px;
+      top: 7px;
+    }
+  }
+  &.service-title-3 {
+    &:after {
+      height: 54px;
+      width: 343px;
+      right: 75px;
+      top: -13px;
+    }
+  }
+  &.service-title-4 {
+    &:after {
+      height: 54px;
+      width: 173px;
+      right: 145px;
+      top: -13px;
+    }
+  }
+  &.service-title-5 {
+    &:after {
+      height: 54px;
+      width: 173px;
+      right: -5px;
+      top: auto;
+      bottom: -17px;
+    }
+  }
+  &.service-title-6 {
+    &:after {
+      height: 95px;
+      width: 173px;
+      left: -28px;
+      top: auto;
+      bottom: 17px;
+    }
+  }
+  &.service-title-7 {
+    &:after {
+      height: 47px;
+      width: 115px;
+      left: -3px;
+      top: -10px;
+    }
+  }
+  &.service-title-8 {
+    &:after {
+      height: 47px;
+      width: 115px;
+      left: 115px;
+      top: -15px;
+    }
+  }
+  &.service-title-9 {
+    &:after {
+      height: 47px;
+      width: 293px;
+      right: 77px;
+      top: auto;
+      bottom: -10px;
+    }
+  }
 }
 
 .services-row {
@@ -887,4 +947,317 @@
   .services-img-right {
     top: 290px;
   }
+}
+
+.section-price {
+
+  .container {
+    display: flex;
+  }
+
+  .price-title-row {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 40px;
+    .price-num {
+      padding-left: 100px;
+      font-weight: 500;
+      font-size: 30px;
+      line-height: 1.1;
+      text-transform: uppercase;
+      padding-right: 50px;
+      strong {
+        line-height: 1.0;
+        font-size: 144px;
+        font-weight: 500;
+        display: block;
+      }
+    }
+
+    .h3 {
+      font-size: 130px;
+      max-width: 800px;
+      line-height: 0.9;
+      padding-left: 100px;
+    }
+  }
+
+  .price-img {
+    flex-basis: 100%;
+
+    img {
+      max-width: 1239px;
+      transform: translateY(11px);
+    }
+  }
+
+  .pricing-column {
+    flex-basis: 60%;
+    padding-top: 140px;
+
+    .small-p {
+      strong {
+        display: block;
+        font-family: $second-font-family;
+        font-size: 96px;
+        margin-bottom: 30px;
+
+        svg {
+          display: inline-block;
+          margin-left: 30px;
+          transform: translateY(-7px);
+        }
+      }
+
+      p {
+        font-size: 18px;
+        font-weight: 600;
+        max-width: 445px;
+      }
+    }
+    .pricing-row:nth-child(2){
+      margin-top: 120px;
+
+      strong {
+        color: $white;
+
+        svg {
+          stroke: $white;
+
+          rect {
+            fill: $white;
+          }
+        }
+      }
+    }
+  }
+}
+
+.section-workflow {
+  position: relative;
+  padding-top: 100px;
+  padding-bottom: 0;
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .section-shapes {
+    right: -3px;
+    top: 43px;
+  }
+  .workflow-heading {
+    padding-left: 100px;
+    .workflow-title {
+      .num {
+        display: flex;
+        align-items: flex-start;
+        font-size: 144px;
+        position: relative;
+        font-weight: 500;
+        line-height: 1.0;
+
+        span {
+          font-size: 48px;
+          text-transform: uppercase;
+          background: $yellow;
+          line-height: 0.95;
+          padding: 0 10px;
+          font-weight: 500;
+          margin-left: 30px;
+        }
+      }
+      .h3 {
+        font-size: 96px;;
+      }
+    }
+  }
+
+  .worflow-cta {
+    margin-left: 170px;
+    strong {
+      font-size: 36px;
+      text-transform: uppercase;
+      font-weight: 800;
+      display: inline-block;
+      position: relative;
+      line-height: 34px;
+      margin-bottom: 110px;
+
+      &:after {
+        @include shape-default(45px, 16px, $gray-dark);
+        position: absolute;
+        left: 0;
+        bottom: -40px;
+      }
+    }
+
+    svg {
+      display: inline-block;
+      margin-left: 25px;
+    }
+  }
+
+  .workflow-items-wrapper {
+    flex-basis: 100%;
+    margin-top: 150px;
+  }
+}
+
+.workflow-item {
+  display: flex;
+  justify-content: space-between;
+
+  .item-txt {
+    padding-left: 140px;
+    padding-top: 120px;
+    max-width: 750px;
+    line-height: 1.0;
+
+    .workflow-item-title {
+      font-size: 96px;
+      font-family: $second-font-family;
+      margin-bottom: 80px;
+      display: inline-block;
+      position: relative;
+
+      &:after {
+        @include shape-default(357px, 58px, $yellow);
+        position: absolute;
+        right: -230px;
+        top: 9px;
+        z-index: -1;
+      }
+    }
+
+    p {
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 18px;
+    }
+  }
+
+  &:nth-child(2) {
+    .workflow-item-title:after {
+      height: 88px;
+      width: 204px;
+      left: -20px;
+      position: absolute;
+      top: -14px;
+    }
+  }
+
+  &:nth-child(3) {
+    .workflow-item-title:after {
+      height: 54px;
+      width: 241px;
+      left: 0;
+      position: absolute;
+      top: -24px;
+    }
+  }
+
+  .workflow-item-img{
+    position: relative;
+
+    &>img {
+      height: 100%;
+    }
+
+    .img-icon {
+      height: 162px;
+      width: 182px;
+      background: $yellow;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  &.reverse {
+    flex-direction: row-reverse;
+
+    .workflow-item-img {
+      .img-icon {
+        left: auto;
+        right: 0;
+      }
+    }
+  }
+}
+
+.form-section {
+  padding-top: 0;
+  position: relative;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .section-shapes {
+    left: 0;
+    top: -5px;
+    z-index: -1;
+  }
+}
+
+.form-main-wrapper {
+  max-width: 570px;
+  margin-top: 240px;
+  margin-left: 12.5%;
+
+  .h3 {
+    font-size: 96px;
+    margin-bottom: 50px;
+  }
+
+  .form-row {
+    max-width: 460px;
+    margin-bottom: 20px;
+
+    label {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+
+      span {
+        font-size: 18px;
+        font-weight: 600;
+        display: inline-block;
+        margin-bottom: 10px;
+      }
+
+      input {
+        background: transparent;
+        border: 1px solid $black;
+        padding: 8px;
+        width: 100%;
+        font-size: 18px;
+        font-weight: 600;
+        outline: none;
+        transition: all 0.3s ease;
+
+        &::placeholder {
+          font-size: 18px;
+          font-weight: 600;
+        }
+
+        &:focus {
+          border-color: $white;
+        }
+      }
+    }
+  }
+
+  .main-btn {
+    margin-top: 50px;
+    background: $black;
+  }
+
 }
