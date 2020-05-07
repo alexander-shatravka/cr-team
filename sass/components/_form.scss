@@ -1,0 +1,152 @@
+.form-input {
+  position: relative;
+  padding: 10px 5px;
+  width: 98%;
+  height: 45px;
+  outline: 0;
+  border: 0;
+  border-bottom: 1px solid #a1a1a1;
+  transition: box-shadow 150ms ease-out, border 0.3s;
+  margin-bottom: 30px;
+  background: transparent;
+
+  &:focus {
+    border-bottom: 2px solid $black;
+  }
+
+  &::-webkit-inner-spin-button {
+    display: none;
+  }
+
+  &.date-input {
+    &::-webkit-datetime-edit {
+      color: transparent;
+    }
+
+    &::-webkit-calendar-picker-indicator {
+      color: transparent;
+      background: transparent;
+    }
+  }
+
+  &.date-input {
+    padding: 10px 15px 10px 5px;
+  }
+
+  &.has-error {
+    border-bottom: 1px solid red;
+  }
+}
+
+.form-input.filled {
+  border-bottom: 2px solid $black;
+}
+
+.inputfile {
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  cursor: pointer;
+}
+
+.add-file-block {
+  cursor: pointer;
+
+  label {
+    #list {
+      position: absolute;
+      top: 125%;
+      li {
+        font-weight: 400;
+        font-size: 14px;
+
+        i {
+          display: inline-block;
+          margin-right: 25px;
+        }
+      }
+    }
+  }
+
+  .custom-label {
+    font-weight: 600;
+    font-size: 18px;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  label {
+    color: $white;
+    display: inline-block;
+    border: 1px solid $black;
+    padding: 8px;
+    max-height: 44px;
+    width: 100%;
+    cursor: pointer;
+    position: relative;
+    pointer-events: none;
+
+    p {
+      display: flex;
+      align-items: center;
+      color: $black;
+      font-weight: 600;
+
+      span {
+        color: rgba(0,0,0, 0.3);
+        display: inline-block;
+        margin-left: 15px;
+      }
+    }
+
+    i {
+      color: $black;
+    }
+
+    @include breakpoint(md) {
+      font-size: 14px;
+    }
+  }
+
+  &:hover {
+    .add-file {
+      color: $black;
+    }
+  }
+
+  label * {
+    pointer-events: none;
+  }
+
+  .wpcf7-not-valid-tip {
+    bottom: 40px;
+
+    @include breakpoint(lg) {
+      bottom: auto;
+      top: -45px;
+    }
+  }
+}
+
+.add-file {
+  height: 26px;
+  text-align: center;
+  color: $black;
+  font-weight: 400;
+  border-radius: 20px;
+  font-size: 14px;
+  padding: 0 8px;
+  text-transform: uppercase;
+  float: right;
+  transition: 0.3s;
+  text-decoration: none;
+  cursor: pointer;
+
+  @include breakpoint(md) {
+    font-size: 12px;
+  }
+}

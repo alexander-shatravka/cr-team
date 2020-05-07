@@ -5,6 +5,7 @@ $(document).ready(function() {
     initFormCustomFocus();
     initFormCustomPlaceholder();
     // initSrollUpCtaButton();
+    initFormFileAttachment();
 });
 
 function initFixedHeader() {
@@ -44,11 +45,10 @@ function initVideoSliders() {
         arrows: true,
         nextArrow: $('.video-btn-next'),
         prevArrow: $('.video-btn-prev'),
-        centerMode: true,
         dots: false,
         infinite: true,
         cssEase: 'cubic-bezier(0.6, 0.2, 0.2, 1)',
-        speed: 2000,
+        speed: 1500,
         draggable: false,
         asNavFor: '.slider-video-bg'
     });
@@ -57,10 +57,9 @@ function initVideoSliders() {
         slidesToScroll: 1,
         dots: false,
         infinite: true,
-        speed: 1000,
+        speed: 750,
         draggable: false,
         arrows: false,
-        cssEase: 'cubic-bezier(0.8, 0.1, 0.1, 1)',
     });
     $('.video-inner-slider-2').slick({
         slidesToShow: 1,
@@ -72,7 +71,7 @@ function initVideoSliders() {
         dots: false,
         infinite: true,
         cssEase: 'cubic-bezier(0.6, 0.2, 0.2, 1)',
-        speed: 2000,
+        speed: 1500,
         draggable: false,
         asNavFor: '.slider-video-bg-2'
     });
@@ -81,11 +80,27 @@ function initVideoSliders() {
         slidesToScroll: 1,
         dots: false,
         infinite: true,
-        speed: 1000,
+        speed: 750,
         draggable: false,
         arrows: false,
-        cssEase: 'cubic-bezier(0.8, 0.1, 0.1, 1)',
     });
+    $('.services-slider').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        vertical: true,
+        arrows: false,
+        dots: true,
+        asNavFor: $('.section-shapes-slider'),
+        speed: 1000,
+    })
+    $('.section-shapes-slider').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        vertical: true,
+        arrows: false,
+        dots: false,
+        speed: 500,
+    })
 }
 
 function initVideoSliderButtonPrev() {
@@ -124,5 +139,47 @@ function initFormCustomFocus() {
 }
 
 function initFormCustomPlaceholder() {
+
+}
+
+function initFormFileAttachment() {
+
+    ( function ( document, window, index )
+    {
+        var inputs = document.querySelectorAll( '.inputfile' );
+        Array.prototype.forEach.call( inputs, function( input )
+        {
+            var label	 = input.nextElementSibling,
+                labelVal = label.innerHTML;
+
+            input.addEventListener( 'change', function( e )
+            {
+                if (this.files && this.files.length <= 2) {
+                    var files = e.target.files;
+
+                    var output = [];
+                    for (var i = 0, f; f = files[i]; i++) {
+                        output.push('<li><i class="fas fa-file"></i>', escape(f.name), '</li>');
+                    }
+                    label.querySelector('#list').innerHTML = output.join('');
+                } else if (this.files && this.files.length >= 3) {
+                    var fileName = '';
+                    if( this.files && this.files.length )
+                        fileName = ( this.getAttribute( 'data-multiple-caption' ) || '' ).replace( '{count}', this.files.length );
+                    else
+                        fileName = e.target.value.split( '\\' ).pop();
+
+                    if( fileName )
+                        label.querySelector( 'ul' ).innerHTML = ('<li>' + fileName + '</li>');
+                    else
+                        label.innerHTML = labelVal;
+                }
+            });
+
+            // Firefox bug fix
+            input.addEventListener( 'focus', function(){ input.classList.add( 'has-focus' ); });
+            input.addEventListener( 'blur', function(){ input.classList.remove( 'has-focus' ); });
+        });
+    }( document, window, 0 ));
 
 }

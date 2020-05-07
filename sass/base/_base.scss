@@ -155,6 +155,7 @@ main {
 .section {
     clear: both;
     padding: 60px 0;
+    max-height: 100vh;
     @include breakpoint(lg) {
         padding: 40px 0;
     }
@@ -260,4 +261,27 @@ main {
     position: absolute;
     display: block;
     user-select: none;
+}
+
+.link-next-screen {
+    cursor: pointer;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    overflow: hidden;
+    background: $yellow;
+    padding-top: 20px;
+
+    span {
+        font-size: 28px;
+        max-width: 120px;
+        text-transform: uppercase;
+        padding-bottom: 35px;
+        line-height: 1;
+        font-weight: 600;
+    }
+
+    &:hover{
+        background: $yellow-dark;
+    }
 }
