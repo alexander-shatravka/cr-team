@@ -8,6 +8,10 @@ $(document).ready(function() {
     initFormFileAttachment();
 });
 
+$(function() {
+    jcf.replaceAll();
+});
+
 function initFixedHeader() {
     var fixedItem = jQuery("header"),
         win = jQuery(window);
@@ -84,23 +88,23 @@ function initVideoSliders() {
         draggable: false,
         arrows: false,
     });
-    $('.services-slider').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        vertical: true,
-        arrows: false,
-        dots: true,
-        asNavFor: $('.section-shapes-slider'),
-        speed: 1000,
-    })
-    $('.section-shapes-slider').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        vertical: true,
-        arrows: false,
-        dots: false,
-        speed: 500,
-    })
+    // $('.services-slider').slick({
+    //     slidesToShow: 1,
+    //     slidesToScroll: 1,
+    //     vertical: true,
+    //     arrows: false,
+    //     dots: true,
+    //     asNavFor: $('.section-shapes-slider'),
+    //     speed: 1000,
+    // })
+    // $('.section-shapes-slider').slick({
+    //     slidesToShow: 1,
+    //     slidesToScroll: 1,
+    //     vertical: true,
+    //     arrows: false,
+    //     dots: false,
+    //     speed: 500,
+    // })
 }
 
 function initVideoSliderButtonPrev() {

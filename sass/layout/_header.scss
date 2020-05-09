@@ -1,5 +1,5 @@
 .header {
-  margin-top: 0px;
+  margin-top: 0;
   position: fixed;
   width: 100%;
   top: 0;
@@ -7,7 +7,7 @@
   padding: 0 32px;
   z-index: 10;
   background: transparent;
-  transition: all 0.3s ease;
+  //transition: all 0.3s ease;
 
   &.fixed {
     padding: 0;
