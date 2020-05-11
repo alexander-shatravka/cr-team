@@ -1,32 +1,47 @@
-$(document).ready(function() {
-    initFixedHeader();
-    initVideoSliders();
-    setTimeout(initVideoSliderButtonPrev,100);
-    initFormCustomFocus();
-    initFormCustomPlaceholder();
-    // initSrollUpCtaButton();
-    initFormFileAttachment();
+$(document).ready(function () {
+  initFixedHeader();
+  initVideoSliders();
+  setTimeout(initVideoSliderButtonPrev, 100);
+  initFormCustomFocus();
+  initFormCustomPlaceholder();
+  // initSrollUpCtaButton();
+  initFormFileAttachment();
+  initCustomScroll();
 });
 
-$(function() {
-    jcf.replaceAll();
-});
+function initCustomScroll(){
+  jcf.replaceAll();
+  var enableScrollFocus = true;
+
+  $('.services-head-section .jcf-scrollable').on('scroll', function () {
+      if(enableScrollFocus) {
+          $('html, body').animate({
+              scrollTop: $('.services-head-section').offset().top - 60
+          }, 500);
+          enableScrollFocus = false;
+      }
+      fi
+  })
+  $('.services-head-section').on('mouseleave', function () {
+      enableScrollFocus = true;
+  })
+}
 
 function initFixedHeader() {
-    var fixedItem = jQuery("header"),
-        win = jQuery(window);
-    win.on('load resize scroll', function(e){
-        var winTop = win.scrollTop();
-        if($(window).width()>768){
-            if(winTop && winTop > 50) {
-                fixedItem.addClass("fixed");
-            }else {
-                fixedItem.removeClass("fixed");
-            }
-            pointRemember = winTop;
-        }
-        // else fixedItem.addClass("slideUp");
-    });
+  var fixedItem = jQuery("header"),
+    win = jQuery(window);
+  win.on('load resize scroll', function (e) {
+    var winTop = win.scrollTop();
+    if ($(window).width() > 768) {
+      if (winTop && winTop > 50) {
+        fixedItem.addClass("fixed");
+      } else {
+        fixedItem.removeClass("fixed");
+      }
+      pointRemember = winTop;
+    }
+    // else fixedItem.addClass("slideUp");
+  });
 }
 
 // function initSrollUpCtaButton() {
@@ -43,103 +58,102 @@ function initFixedHeader() {
 // }
 
 function initVideoSliders() {
-    $('.video-inner-slider').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: true,
-        nextArrow: $('.video-btn-next'),
-        prevArrow: $('.video-btn-prev'),
-        dots: false,
-        infinite: true,
-        cssEase: 'cubic-bezier(0.6, 0.2, 0.2, 1)',
-        speed: 1500,
-        draggable: false,
-        asNavFor: '.slider-video-bg'
-    });
-    $('.slider-video-bg').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        dots: false,
-        infinite: true,
-        speed: 750,
-        draggable: false,
-        arrows: false,
-    });
-    $('.video-inner-slider-2').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: true,
-        nextArrow: $('.video-btn-next-2'),
-        prevArrow: $('.video-btn-prev-2'),
-        centerMode: true,
-        dots: false,
-        infinite: true,
-        cssEase: 'cubic-bezier(0.6, 0.2, 0.2, 1)',
-        speed: 1500,
-        draggable: false,
-        asNavFor: '.slider-video-bg-2'
-    });
-    $('.slider-video-bg-2').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        dots: false,
-        infinite: true,
-        speed: 750,
-        draggable: false,
-        arrows: false,
-    });
-    // $('.services-slider').slick({
-    //     slidesToShow: 1,
-    //     slidesToScroll: 1,
-    //     vertical: true,
-    //     arrows: false,
-    //     dots: true,
-    //     asNavFor: $('.section-shapes-slider'),
-    //     speed: 1000,
-    // })
-    // $('.section-shapes-slider').slick({
-    //     slidesToShow: 1,
-    //     slidesToScroll: 1,
-    //     vertical: true,
-    //     arrows: false,
-    //     dots: false,
-    //     speed: 500,
-    // })
+  $('.video-inner-slider').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+    nextArrow: $('.video-btn-next'),
+    prevArrow: $('.video-btn-prev'),
+    dots: false,
+    infinite: true,
+    cssEase: 'cubic-bezier(0.6, 0.2, 0.2, 1)',
+    speed: 1500,
+    draggable: false,
+    asNavFor: '.slider-video-bg'
+  });
+  $('.slider-video-bg').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    dots: false,
+    infinite: true,
+    speed: 750,
+    draggable: false,
+    arrows: false,
+  });
+  $('.video-inner-slider-2').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+    nextArrow: $('.video-btn-next-2'),
+    prevArrow: $('.video-btn-prev-2'),
+    centerMode: true,
+    dots: false,
+    infinite: true,
+    cssEase: 'cubic-bezier(0.6, 0.2, 0.2, 1)',
+    speed: 1500,
+    draggable: false,
+    asNavFor: '.slider-video-bg-2'
+  });
+  $('.slider-video-bg-2').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    dots: false,
+    infinite: true,
+    speed: 750,
+    draggable: false,
+    arrows: false,
+  });
+  // $('.services-slider').slick({
+  //     slidesToShow: 1,
+  //     slidesToScroll: 1,
+  //     vertical: true,
+  //     arrows: false,
+  //     dots: true,
+  //     asNavFor: $('.section-shapes-slider'),
+  //     speed: 1000,
+  // })
+  // $('.section-shapes-slider').slick({
+  //     slidesToShow: 1,
+  //     slidesToScroll: 1,
+  //     vertical: true,
+  //     arrows: false,
+  //     dots: false,
+  //     speed: 500,
+  // })
 }
 
 function initVideoSliderButtonPrev() {
-    $('.video-inner-slider').on('beforeChange', function () {
-        $('.video-btn-prev').hide();
-        $('.btn-video').hide();
-    });
-    $('.video-inner-slider').on('afterChange', function () {
-        $('.video-btn-prev').show();
-        $('.btn-video').show();
-    });
+  $('.video-inner-slider').on('beforeChange', function () {
+    $('.video-btn-prev').hide();
+    $('.btn-video').hide();
+  });
+  $('.video-inner-slider').on('afterChange', function () {
+    $('.video-btn-prev').show();
+    $('.btn-video').show();
+  });
 
-    $('.video-inner-slider-2').on('beforeChange', function () {
-        $('.video-btn-prev-2').hide();
-        $('.btn-video').hide();
-    });
-    $('.video-inner-slider-2').on('afterChange', function () {
-        $('.video-btn-prev-2').show();
-        $('.btn-video').show();
-    });
+  $('.video-inner-slider-2').on('beforeChange', function () {
+    $('.video-btn-prev-2').hide();
+    $('.btn-video').hide();
+  });
+  $('.video-inner-slider-2').on('afterChange', function () {
+    $('.video-btn-prev-2').show();
+    $('.btn-video').show();
+  });
 }
 
 function initFormCustomFocus() {
-    $('.brief-form input').on('blur', function () {
-        $('.input-wrapper').removeClass('focused');
-        if($(this).val()){
-            $(this).parents('.input-wrapper').find('.placeholder').addClass('hide');
-        }
-        else {
-            $(this).parents('.input-wrapper').find('.placeholder').removeClass('hide');
-        }
-    });
-    $('.brief-form input').on('focus', function () {
-        $(this).parents('.input-wrapper').addClass('focused');
-    })
+  $('.brief-form input').on('blur', function () {
+    $('.input-wrapper').removeClass('focused');
+    if ($(this).val()) {
+      $(this).parents('.input-wrapper').find('.placeholder').addClass('hide');
+    } else {
+      $(this).parents('.input-wrapper').find('.placeholder').removeClass('hide');
+    }
+  });
+  $('.brief-form input').on('focus', function () {
+    $(this).parents('.input-wrapper').addClass('focused');
+  })
 }
 
 function initFormCustomPlaceholder() {
@@ -147,43 +161,42 @@ function initFormCustomPlaceholder() {
 }
 
 function initFormFileAttachment() {
+  (function (document, window, index) {
+    var inputs = document.querySelectorAll('.inputfile');
+    Array.prototype.forEach.call(inputs, function (input) {
+      var label = input.nextElementSibling,
+        labelVal = label.innerHTML;
 
-    ( function ( document, window, index )
-    {
-        var inputs = document.querySelectorAll( '.inputfile' );
-        Array.prototype.forEach.call( inputs, function( input )
-        {
-            var label	 = input.nextElementSibling,
-                labelVal = label.innerHTML;
+      input.addEventListener('change', function (e) {
+        if (this.files && this.files.length <= 2) {
+          var files = e.target.files;
 
-            input.addEventListener( 'change', function( e )
-            {
-                if (this.files && this.files.length <= 2) {
-                    var files = e.target.files;
+          var output = [];
+          for (var i = 0, f; f = files[i]; i++) {
+            output.push('<li><i class="fas fa-file"></i>', escape(f.name), '</li>');
+          }
+          label.querySelector('#list').innerHTML = output.join('');
+        } else if (this.files && this.files.length >= 3) {
+          var fileName = '';
+          if (this.files && this.files.length)
+            fileName = (this.getAttribute('data-multiple-caption') || '').replace('{count}', this.files.length);
+          else
+            fileName = e.target.value.split('\\').pop();
 
-                    var output = [];
-                    for (var i = 0, f; f = files[i]; i++) {
-                        output.push('<li><i class="fas fa-file"></i>', escape(f.name), '</li>');
-                    }
-                    label.querySelector('#list').innerHTML = output.join('');
-                } else if (this.files && this.files.length >= 3) {
-                    var fileName = '';
-                    if( this.files && this.files.length )
-                        fileName = ( this.getAttribute( 'data-multiple-caption' ) || '' ).replace( '{count}', this.files.length );
-                    else
-                        fileName = e.target.value.split( '\\' ).pop();
+          if (fileName)
+            label.querySelector('ul').innerHTML = ('<li>' + fileName + '</li>');
+          else
+            label.innerHTML = labelVal;
+        }
+      });
 
-                    if( fileName )
-                        label.querySelector( 'ul' ).innerHTML = ('<li>' + fileName + '</li>');
-                    else
-                        label.innerHTML = labelVal;
-                }
-            });
-
-            // Firefox bug fix
-            input.addEventListener( 'focus', function(){ input.classList.add( 'has-focus' ); });
-            input.addEventListener( 'blur', function(){ input.classList.remove( 'has-focus' ); });
-        });
-    }( document, window, 0 ));
-
+      // Firefox bug fix
+      input.addEventListener('focus', function () {
+        input.classList.add('has-focus');
+      });
+      input.addEventListener('blur', function () {
+        input.classList.remove('has-focus');
+      });
+    });
+  }(document, window, 0));
 }
