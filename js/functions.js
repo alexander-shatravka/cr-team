@@ -7,14 +7,26 @@ $(document).ready(function () {
   // initSrollUpCtaButton();
   initFormFileAttachment();
   initCustomScroll();
+  initAnchorsScroll();
 });
+
+function initAnchorsScroll() {
+  $(document).on('click', 'a.anchor-link[href^="#"]', function (event) {
+    event.preventDefault();
+
+    $('html, body').animate({
+      scrollTop: $($.attr(this, 'href')).offset().top
+    }, 500);
+  });
+}
 
 function initCustomScroll(){
   jcf.replaceAll();
   var enableScrollFocus = true;
 
-  $('.services-head-section .jcf-scrollable').on('scroll', function () {
+  $('.services-head-section .jcf-scrollable').on('scroll', function (e) {
       if(enableScrollFocus) {
+          e.preventDefault();
           $('html, body').animate({
               scrollTop: $('.services-head-section').offset().top - 60
           }, 500);
