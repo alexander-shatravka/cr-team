@@ -7,11 +7,19 @@
   padding-top: 150px;
   padding-bottom: 80px;
 
+  @include breakpoint(xxl) {
+    padding-bottom: 30px;
+  }
+
   .intro-shapes {
     position: absolute;
     right: 0;
     top: -60px;
     z-index: -1;
+
+    @include breakpoint(xxl) {
+      top: -50px;
+    }
   }
 
   .container {
@@ -27,7 +35,7 @@
 
 .intro-img {
   background: $yellow;
-  max-width: 64%;
+  max-width: 58.9vw;
   position: relative;
   max-height: 633px;
   overflow: hidden;
@@ -41,8 +49,9 @@
 
 .intro-txt {
   position: absolute;
-  right: 100px;
-  top: 90px;
+  left: 63vw;
+  top: 50%;
+  transform: translateY(-55%);
 
   .intro-title {
     font-size: 166px;
@@ -68,6 +77,15 @@
   .main-btn {
     float: right;
     padding: 10px 50px;
+  }
+
+  @include breakpoint(xxl){
+    .intro-title {
+      font-size: 130px;
+    }
+    .intro-subtitle {
+      font-size: 80px;
+    }
   }
 }
 
@@ -105,6 +123,7 @@
   justify-content: flex-start;
   padding-left: 210px;
   padding-top: 60px;
+  max-width: 77vw;
   li {
     display: flex;
     margin-right: 20px;
@@ -122,6 +141,19 @@
       text-transform: uppercase;
       line-height: 1.0;
       max-width: 250px;
+    }
+  }
+
+  @include breakpoint(xxl){
+    padding-top: 30px;
+
+    li {
+      .counter {
+        font-size: 60px;
+      }
+      p {
+        font-size: 22px;
+      }
     }
   }
 }
@@ -181,7 +213,7 @@
   flex-wrap: wrap;
   padding-left: 210px;
   padding-top: 70px;
-  padding-bottom: 20px;
+  padding-bottom: 60px;
   max-width: 88%;
 
   .h5 {
@@ -221,6 +253,23 @@
 
       strong {
         font-size: 20px;
+      }
+    }
+  }
+
+  @include breakpoint(xxl) {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    padding-left: 160px;
+
+    .small-p {
+      .h6 {
+        font-size: 76px;
+        margin-right: 50px;
+      }
+
+      p {
+        max-width: 400px;
       }
     }
   }
@@ -321,12 +370,25 @@
     flex-wrap: wrap;
 
     .intro-bottom-2-img {
-      max-height: 600px;
-      overflow: hidden;
-      margin-top: 26px;
+      flex-basis: 55%;
+      position: relative;
 
-      img {
-        transform: translateY(2px);
+      &:before {
+        @include shape-default(10vw, 10vw, $yellow);
+        right: 0;
+        bottom: 0;
+        position: absolute;
+        z-index: -1;
+        transform: translateX(49%);
+      }
+
+      &:after {
+        @include shape-default(3vw, 31vw, $yellow);
+        right: 0;
+        bottom: 0;
+        position: absolute;
+        z-index: -1;
+        transform: translateX(49%);
       }
     }
 
@@ -345,6 +407,17 @@
         p {
           font-size: 24px;
           margin-bottom: 40px;
+        }
+      }
+
+      @include breakpoint(xxl) {
+        padding-left: 90px;
+        padding-right: 60px;
+
+        .small-p {
+          p {
+            font-size: 18px;
+          }
         }
       }
 
@@ -390,6 +463,12 @@
       .h3 {
         font-size: 84px;
         max-width: 1210px;
+
+        @include breakpoint(xxl) {
+          font-size: 70px;
+          max-width: 80%;
+          margin-bottom: 0;
+        }
       }
     }
   }
@@ -402,6 +481,10 @@
   margin: 0 auto 0;
   max-width: 100%;
   overflow: hidden;
+
+  @include breakpoint(xxl){
+    padding: 80px 0 80px 20px;
+  }
 
   .slider-video-bg,
   .slider-video-bg-2{
@@ -472,6 +555,11 @@
     padding: 30px 15px 20px 40px;
     width: 280px;
 
+    @include breakpoint(xxl){
+      width: 230px;
+      padding-left: 20px;
+    }
+
     .next-text {
       font-size: 18px;
       text-transform: uppercase;
@@ -531,6 +619,10 @@
 .slide-wrapper {
   transition: 1s padding ease;
   padding: 0 15%;
+
+  @include breakpoint(xxl){
+    padding: 0 8%;
+  }
 }
 
 .event-section {
@@ -605,6 +697,14 @@
         font-family: $second-font-family;
       }
 
+      @include breakpoint(xxl){
+        font-size: 100px;
+
+        b {
+          font-size: 170px;
+        }
+      }
+
       span {
         font-size: 36px;
         font-weight: 600;
@@ -631,6 +731,14 @@
       line-height: 1.0;
       margin-top: 20px;
       position: relative;
+
+      @include breakpoint(xxl){
+        font-size: 70px;
+
+        br {
+          display: none;
+        }
+      }
 
       &:after {
         @include shape-default(140px, 13px, $black);
@@ -707,6 +815,10 @@
         text-align: right;
         padding-right: 350px;
 
+        @include breakpoint(xxl){
+          padding-right: 250px;
+        }
+
         .h2 {
           font-size: 110px;
           position: relative;
@@ -720,6 +832,14 @@
             z-index: -1;
           }
         }
+
+        @include breakpoint(xxl){
+          margin-top: 10px;
+          .h2 {
+            font-size: 80px;
+            margin-top: 10px;
+          }
+        }
       }
     }
   }
@@ -729,10 +849,18 @@
 
     .container {
       justify-content: space-between;
+
+      @include breakpoint(xxl){
+        align-items: flex-end;
+      }
     }
 
     .event-title-column {
       transform: translateY(-110px);
+
+      @include breakpoint(xxl){
+        transform: translateY(-170px);
+      }
     }
 
     .event-img {
@@ -740,12 +868,16 @@
       max-height: 780px;
       margin-left: 100px;
 
+      @include breakpoint(xxl){
+        transform: translateY(10px);
+      }
+
       &:after {
         @include shape-default(20vw, 120vh, $yellow);
         right: 0;
         position: absolute;
         transform: translateX(100%);
-        top: -20vh;
+        top: -25vh;
       }
 
       .link-next-screen {
@@ -829,6 +961,20 @@
           }
           &:after {
             display: none;
+          }
+        }
+      }
+
+      @include breakpoint(xxl){
+        padding: 0 50px 0 30px;
+
+        .event-number-block {
+          strong {
+            font-size: 70px;
+          }
+          span {
+            font-size: 17px;
+            max-width: 102px;
           }
         }
       }
@@ -1102,6 +1248,10 @@
     &.bottom {
       bottom: 0;
     }
+
+    @include breakpoint(xxl) {
+      max-width: 400px;
+    }
   }
 
   .services-img-right {
@@ -1110,12 +1260,16 @@
     max-width: 470px;
     max-height: 780px;
     overflow: hidden;
+
+    @include breakpoint(xxl) {
+      max-width: 400px;
+    }
   }
 
   .services-col {
     width: 100%;
     max-width: 40%;
-    margin-left: 33%;
+    margin-left: 31%;
     padding-top: 45px;
 
     &.first {
@@ -1126,6 +1280,10 @@
       font-size: 80px;
       margin-bottom: 30px;
       margin-top: 0;
+
+      @include breakpoint(xxl) {
+        font-size: 70px;
+      }
     }
 
     .small-p {
@@ -1596,6 +1754,8 @@
 .form-section {
   padding-top: 0;
   position: relative;
+  overflow-y: hidden;
+  padding-bottom: 0;
 
   .container {
     display: flex;
@@ -1606,6 +1766,18 @@
     left: 0;
     top: -5px;
     z-index: -1;
+  }
+}
+
+.form-img {
+  max-width: 50%;
+  height: 100%;
+  overflow: hidden;
+
+  img {
+    height: 100%;
+    width: auto;
+    max-width: unset;
   }
 }
 
@@ -1660,6 +1832,15 @@
     }
   }
 
+  @include breakpoint(xxl) {
+    margin-left: 7%;
+    margin-top: 120px;
+
+    .h3 {
+      font-size: 70px;
+    }
+  }
+
   .main-btn {
     margin-top: 80px;
     background: $black;
@@ -1667,7 +1848,78 @@
 
 }
 
+.section-pre-footer {
+  padding: 0;
+  height: 100vh;
 
-.portfolio-section {
-  //height: 300px;
+  .section-shapes {
+    transform: translateY(-3px);
+  }
+
+  .pre-footer-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 14.2vw 80px;
+    width: 100%;
+
+    .col {
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 1.0;
+      display: flex;
+      flex-direction: column;
+      margin-top: 30px;
+      transform: translateX(-7vw);
+
+      span {
+        font-size: 34px;
+      }
+
+      strong {
+        font-weight: 900;
+        font-size: 90px;
+        font-family: $second-font-family;
+      }
+
+      .h4 {
+        font-size: 140px;
+      }
+    }
+
+    .date-event {
+      max-width: unset;
+      flex-wrap: nowrap;
+      align-items: center;
+      margin-bottom: 50px;
+      .date-day {
+        position: relative;
+        font-family: $second-font-family;
+        font-size: 60px;
+        line-height: 1.0;
+        font-weight: 500;
+        &:after {
+          position: absolute;
+          right: -5px;
+          top: 0;
+          z-index: -1;
+          width: 120px;
+          height: 50px;
+          background: $yellow;
+        }
+      }
+      .date-text {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.5 ;
+      }
+
+      &:nth-child(2) {
+        .date-day {
+          &:after {
+            width: 90px;
+          }
+        }
+      }
+    }
+  }
 }

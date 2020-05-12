@@ -31,8 +31,8 @@ function initCustomScroll(){
               scrollTop: $('.services-head-section').offset().top - 60
           }, 500);
           enableScrollFocus = false;
+          return false;
       }
-      fi
   })
   $('.services-head-section').on('mouseleave', function () {
       enableScrollFocus = true;

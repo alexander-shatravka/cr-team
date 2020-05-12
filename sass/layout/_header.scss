@@ -9,6 +9,10 @@
   background: transparent;
   //transition: all 0.3s ease;
 
+  @include breakpoint(xxl) {
+    padding: 0 15px;
+  }
+
   &.fixed {
     padding: 0;
 
@@ -102,10 +106,24 @@
       text-transform: uppercase;
       padding: 30px 0 30px 30px;
       margin-bottom: 10px;
+
+      @include breakpoint(xxl) {
+        font-size: 18px;
+
+        padding: 30px 0 30px 20px;
+      }
     }
 
     .main-btn {
       min-width: 250px;
+    }
+
+    @include breakpoint(xxl) {
+      flex-basis: 27%;
+
+      .main-btn {
+        min-width: 200px;
+      }
     }
   }
 
@@ -163,6 +181,22 @@
           }
         }
       }
+
+      @include breakpoint(xxl) {
+        justify-content: space-between;
+        padding-right: 30px;
+
+        li {
+          padding-right: 0;
+
+          a {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+    @include breakpoint(xxl) {
+      padding-left: 70px;
     }
   }
 }
