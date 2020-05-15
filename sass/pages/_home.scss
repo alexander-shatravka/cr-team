@@ -1859,7 +1859,7 @@
   .pre-footer-row {
     display: flex;
     justify-content: space-between;
-    padding: 14.2vw 80px;
+    padding: 14.2vw 80px 10.5vw;
     width: 100%;
 
     .col {
@@ -1920,6 +1920,26 @@
           }
         }
       }
+    }
+  }
+
+  .pre-footer-row-bottom {
+    display: flex;
+    padding-left: 16vw;
+    width: 100%;
+    align-items: flex-start;
+
+    p {
+      font-size: 32px;
+      font-weight: 900;
+      text-transform: uppercase;
+      max-width: 800px;
+      line-height: 1.1;
+    }
+
+    .main-btn {
+      width: 240px;
+      margin-left: 50px;
     }
   }
 }
