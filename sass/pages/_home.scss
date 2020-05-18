@@ -890,7 +890,8 @@
         width: 550px;
         height: 150px;
         display: flex;
-        align-items: flex-end;
+        align-items: center;
+        padding-top: 60px;
         justify-content: space-around;
 
         span {
@@ -907,7 +908,7 @@
         }
 
         img {
-          width: 180px;
+          width: 220px;
         }
       }
     }
@@ -1940,6 +1941,112 @@
     .main-btn {
       width: 240px;
       margin-left: 50px;
+    }
+  }
+}
+
+.portfolio-section {
+  padding: 0;
+  max-height: unset;
+
+  .section-shapes {
+    position: absolute;
+  }
+
+  .container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .portfolio-grid-wrapper {
+    flex-basis: 70%;
+    max-width: 70%;
+  }
+
+  .portfolio-bottom {
+    position: relative;
+    flex-basis: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: $yellow;
+    padding-top: 50px;
+
+    .h3 {
+      font-size: 90px;
+      line-height: 1.0;
+    }
+
+    a {
+      font-size: 33px;
+      text-transform: uppercase;
+      position: relative;
+      font-weight: 600;
+      transform: translateY(-50%);
+
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        background: $black;
+        height: 4px;
+        width: 500px;
+        right: -550px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  .title-column {
+    padding-right: 80px;
+    .h2 {
+      font-size: 90px;
+      max-width: 370px;
+      margin-bottom: 50px;
+    }
+
+    .subtitle {
+      font-size: 33px;
+      font-weight: 800;
+      line-height: 1.0;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+
+      .lines {
+        margin-right: 40px;
+      }
+    }
+  }
+}
+
+.portfolio-grid {
+  display: flex;
+  flex-wrap: wrap;
+
+  .portfolio-item {
+    flex-basis: 33.3333%;
+    width: 33.3333%;
+    max-height: calc(50vh - 50px);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 100%;
+      height: auto;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover {
+
+      img {
+        transform: scale(1.07);
+      }
     }
   }
 }
