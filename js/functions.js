@@ -122,7 +122,6 @@ function initVideoSliders() {
     dots: false,
     infinite: true,
     speed: 750,
-    draggable: false,
     nextArrow: $('.portfolio-next'),
     prevArrow: $('.portfolio-prev')
   });
@@ -132,7 +131,6 @@ function initVideoSliders() {
     dots: false,
     infinite: true,
     speed: 750,
-    draggable: false,
     nextArrow: $('.portfolio-arrow-next'),
     prevArrow: false,
     asNavFor: $('.portfolio-nav-slider')
