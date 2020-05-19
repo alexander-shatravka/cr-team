@@ -25,6 +25,7 @@ function initCustomScroll(){
   var enableScrollFocus = true;
 
   $('.services-head-section .jcf-scrollable').on('scroll', function (e) {
+    e.preventDefault();
       if(enableScrollFocus) {
           e.preventDefault();
           $('html, body').animate({
@@ -115,6 +116,40 @@ function initVideoSliders() {
     draggable: false,
     arrows: false,
   });
+  $('.portfolio-page .portfolio-grid-wrapper').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    dots: false,
+    infinite: true,
+    speed: 750,
+    draggable: false,
+    nextArrow: $('.portfolio-next'),
+    prevArrow: $('.portfolio-prev')
+  });
+  $('.home-page .portfolio-grid-wrapper').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    dots: false,
+    infinite: true,
+    speed: 750,
+    draggable: false,
+    nextArrow: $('.portfolio-arrow-next'),
+    prevArrow: false,
+    asNavFor: $('.portfolio-nav-slider')
+  });
+  $('.home-page .portfolio-nav-slider').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    dots: false,
+    vertical: true,
+    infinite: true,
+    speed: 750,
+    draggable: false,
+    arrows: false
+  });
+  $('.home-page .portfolio-nav-slider').on('afterChange', function () {
+    $('.next-name').text($('.portfolio-nav-slider .slick-active').next().text())
+  })
   // $('.services-slider').slick({
   //     slidesToShow: 1,
   //     slidesToScroll: 1,

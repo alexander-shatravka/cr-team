@@ -1973,6 +1973,15 @@
     justify-content: space-around;
     background: $yellow;
     padding-top: 50px;
+    padding-right: 10vw;
+    padding-left: 10vw;
+
+    &:before {
+      @include shape-default(200px, 70px, $base-background);
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
 
     .h3 {
       font-size: 90px;
@@ -2001,11 +2010,18 @@
   }
 
   .title-column {
-    padding-right: 80px;
+    flex-basis: 30%;
+    padding: 80px;
+    padding-bottom: 0;
+    padding-top: 140px;
     .h2 {
       font-size: 90px;
       max-width: 370px;
       margin-bottom: 50px;
+
+      @include breakpoint(xxl){
+        font-size: 70px;
+      }
     }
 
     .subtitle {
@@ -2015,16 +2031,52 @@
       text-transform: uppercase;
       display: flex;
       align-items: center;
+      flex-wrap: wrap;
 
       .lines {
         margin-right: 40px;
+
+        @include breakpoint(xxl){
+          max-width: 35px;
+          margin-right: 20px;
+        }
+      }
+
+      b {
+        font-weight: 900;
+        max-width: 200px;
+      }
+
+      .portfolio-arrow-next {
+        flex-basis: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 50px;
+        text-decoration: none;
+
+        img {
+          width: 180px;
+          max-height: 35px;
+          transition: width 0.3s ease;
+        }
+
+        .next-name {
+          font-size: 23px;
+        }
+
+        &:hover {
+
+          img {
+            width: 200px;
+          }
+        }
       }
     }
   }
 }
 
 .portfolio-grid {
-  display: flex;
+  display: flex!important;
   flex-wrap: wrap;
 
   .portfolio-item {

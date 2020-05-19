@@ -285,3 +285,25 @@ main {
         background: $yellow-dark;
     }
 }
+
+.row-next-wrapper {
+  background: $yellow;
+  margin-left: 305px;
+  padding: 35px 100px 35px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .main-btn {
+    width: 240px;
+  }
+
+  .h5 {
+    flex-basis: 80%;
+    text-align: center;
+    font-size: 64px;
+    font-weight: 800;
+    line-height: 1.0;
+    margin-bottom: 0;
+  }
+}

@@ -40,6 +40,10 @@
       border-color: $gray-dark;
     }
   }
+
+  &.btn-black {
+    background: $black;
+  }
 }
 
 @keyframes circle-small-scale {
