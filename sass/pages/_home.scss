@@ -35,9 +35,7 @@
 
 .intro-img {
   background: $yellow;
-  max-width: 58.9vw;
   position: relative;
-  max-height: 633px;
   overflow: hidden;
 
   img {
@@ -49,7 +47,7 @@
 
 .intro-txt {
   position: absolute;
-  left: 63vw;
+  left: 67vw;
   top: 50%;
   transform: translateY(-55%);
 
@@ -122,7 +120,7 @@
   align-items: flex-start;
   justify-content: flex-start;
   padding-left: 210px;
-  padding-top: 60px;
+  padding-top: 35px;
   max-width: 77vw;
   li {
     display: flex;
@@ -370,7 +368,7 @@
     flex-wrap: wrap;
 
     .intro-bottom-2-img {
-      flex-basis: 55%;
+      flex-basis: 50%;
       position: relative;
 
       &:before {
@@ -379,16 +377,16 @@
         bottom: 0;
         position: absolute;
         z-index: -1;
-        transform: translateX(49%);
+        transform: translateX(70%);
       }
 
       &:after {
-        @include shape-default(3vw, 31vw, $yellow);
+        @include shape-default(3vw, 28vw, $yellow);
         right: 0;
         bottom: 0;
         position: absolute;
         z-index: -1;
-        transform: translateX(49%);
+        transform: translateX(100%);
       }
     }
 
@@ -463,6 +461,7 @@
       .h3 {
         font-size: 84px;
         max-width: 1210px;
+        margin-bottom: 0;
 
         @include breakpoint(xxl) {
           font-size: 70px;
@@ -1171,6 +1170,7 @@
 }
 
 .services-row {
+  overflow: hidden;
 
   .services-slider {
 
@@ -1372,8 +1372,7 @@
 }
 
 .section-price {
-  padding-top: 0;
-  //margin-bottom: 70px;
+  padding: 0;
 
   .container {
     display: flex;
@@ -1510,7 +1509,7 @@
     right: 3px;
     top: 0;
     background: $base-background;
-    width: 80px;
+    width: 150px;
     height: 200vw;
     transform: translateY(-50%);
     position: absolute;
@@ -1519,6 +1518,7 @@
 
   .jcf-scrollbar-slider {
     height: 100% !important;
+    max-height: 100vh!important;
   }
 }
 
@@ -1757,6 +1757,7 @@
   position: relative;
   overflow-y: hidden;
   padding-bottom: 0;
+  max-height: 100vh;
 
   .container {
     display: flex;
@@ -1980,7 +1981,7 @@
       @include shape-default(200px, 70px, $base-background);
       position: absolute;
       left: 0;
-      top: 0;
+      top: -1px;
     }
 
     .h3 {
@@ -2067,7 +2068,7 @@
         &:hover {
 
           img {
-            width: 200px;
+            width: 200px!important;
           }
         }
       }
@@ -2078,6 +2079,7 @@
 .portfolio-grid {
   display: flex!important;
   flex-wrap: wrap;
+  transform: translateY(10px);
 
   .portfolio-item {
     flex-basis: 33.3333%;
@@ -2091,6 +2093,7 @@
     img {
       width: 100%;
       height: auto;
+      transform: scale(1.01);
       transition: transform 0.3s ease;
     }
 
