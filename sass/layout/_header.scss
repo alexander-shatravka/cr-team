@@ -65,6 +65,10 @@
           }
         }
       }
+
+      @include breakpoint(lg){
+        height: 120px;
+      }
     }
 
     .header-cta-block {
@@ -125,6 +129,10 @@
         min-width: 200px;
       }
     }
+
+    @include breakpoint(lg) {
+      flex-basis: 42%;
+    }
   }
 
   .header-shapes {
@@ -136,13 +144,14 @@
     width: 71%;
     flex-basis: 100%;
     padding-left: 100px;
+    position: relative;
 
     ul {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
       align-items: center;
-      justify-content: flex-start;
+      justify-content: flex-end;
       flex-basis: 100%;
       max-height: 70px;
 
@@ -192,6 +201,14 @@
           a {
             font-size: 18px;
           }
+        }
+      }
+
+      @include breakpoint(lg) {
+        justify-content: flex-start;
+
+        li {
+          padding-right: 20px;
         }
       }
     }
