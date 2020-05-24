@@ -267,6 +267,10 @@ main {
     img {
         width: 100%;
     }
+
+    @include breakpoint(md) {
+        display: none;
+    }
 }
 
 .link-next-screen {

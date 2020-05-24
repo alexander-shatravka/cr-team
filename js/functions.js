@@ -8,6 +8,7 @@ $(document).ready(function () {
   initFormFileAttachment();
   initCustomScroll();
   initAnchorsScroll();
+  initMobileMenu();
 });
 
 function initAnchorsScroll() {
@@ -45,7 +46,7 @@ function initFixedHeader() {
     win = jQuery(window);
   win.on('load resize scroll', function (e) {
     var winTop = win.scrollTop();
-    if ($(window).width() > 768) {
+    if ($(window).width() > 0) {
       if (winTop && winTop > 50) {
         fixedItem.addClass("fixed");
       } else {
@@ -55,6 +56,13 @@ function initFixedHeader() {
     }
     // else fixedItem.addClass("slideUp");
   });
+}
+
+function initMobileMenu() {
+  $('.burger-btn').on('click', function () {
+      $(this).toggleClass('active');
+      $('.main-nav').toggleClass('mobile-show');
+  })
 }
 
 // function initSrollUpCtaButton() {
