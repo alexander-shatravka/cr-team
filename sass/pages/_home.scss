@@ -57,7 +57,7 @@
 
 .intro-txt {
   position: absolute;
-  left: 67vw;
+  left: 67%;
   top: 50%;
   transform: translateY(-55%);
 
@@ -98,12 +98,17 @@
 
   @include breakpoint(lg) {
     left: 62vw;
+    transform: translateY(-60%);
 
     .intro-title {
       font-size: 100px;
     }
     .intro-subtitle {
       font-size: 60px;
+    }
+
+    .main-btn {
+      padding: 5px 40px;
     }
   }
 }
@@ -241,8 +246,8 @@
   align-items: flex-end;
   flex-wrap: wrap;
   padding-left: 210px;
-  padding-top: 70px;
-  padding-bottom: 60px;
+  padding-top: 40px;
+  padding-bottom: 40px;
   max-width: 88%;
 
   .h5 {
@@ -277,8 +282,7 @@
     p {
       font-size: 16px;
       flex-basis: 50%;
-      max-width: 500px;
-      padding-top: 10px;
+      max-width: 650px;
 
       strong {
         font-size: 20px;
@@ -298,7 +302,23 @@
       }
 
       p {
-        max-width: 400px;
+        max-width: 460px;
+      }
+    }
+  }
+
+  @include breakpoint(lg) {
+    padding-left: 110px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    max-width: 92%;
+
+    .small-p {
+      width: 100%;
+      background: $base-background;
+
+      p {
+        padding-top: 0;
       }
     }
   }
@@ -403,7 +423,7 @@
       position: relative;
 
       &:before {
-        @include shape-default(10vw, 10vw, $yellow);
+        @include shape-default(15%, 30%, $yellow);
         right: 0;
         bottom: 0;
         position: absolute;
@@ -412,7 +432,7 @@
       }
 
       &:after {
-        @include shape-default(3vw, 28vw, $yellow);
+        @include shape-default(5%, 90%, $yellow);
         right: 0;
         bottom: 0;
         position: absolute;
@@ -427,7 +447,8 @@
 
     .intro-bottom-2-text {
       flex-basis: 45%;
-      padding-left: 120px;
+      padding-left: 80px;
+      padding-top: 50px;
       padding-right: 80px;
       transform: translateY(-20px);
 
@@ -440,11 +461,15 @@
         p {
           font-size: 24px;
           margin-bottom: 40px;
+
+          &.last {
+            margin-top: 50px;
+          }
         }
       }
 
       @include breakpoint(xxl) {
-        padding-left: 90px;
+        padding-left: 60px;
         padding-right: 60px;
 
         .small-p {
@@ -454,9 +479,18 @@
         }
       }
 
+      @include breakpoint(xl) {
+        .small-p {
+          p {
+            margin-bottom: 20px;
+          }
+        }
+      }
+
       @include breakpoint(lg) {
         flex-basis: 100%;
         padding-top: 50px;
+        padding-left: 60px;
       }
 
       ul {
@@ -512,6 +546,7 @@
 
       @include breakpoint(lg) {
         flex-basis: 100%;
+        padding-left: 60px;
       }
     }
   }
@@ -712,6 +747,10 @@
           display: none;
         }
       }
+
+      @include breakpoint(lg) {
+        padding-left: 40px;
+      }
     }
 
     .event-descr-1 {
@@ -858,10 +897,6 @@
         text-align: right;
         padding-right: 350px;
 
-        @include breakpoint(xxl){
-          padding-right: 250px;
-        }
-
         .h2 {
           font-size: 110px;
           position: relative;
@@ -876,12 +911,17 @@
           }
         }
 
-        @include breakpoint(xxl){
+        @include breakpoint(xxl) {
+          padding-right: 250px;
           margin-top: 10px;
           .h2 {
             font-size: 80px;
             margin-top: 10px;
           }
+        }
+
+        @include breakpoint(lg) {
+          padding-right: 50px;
         }
       }
     }
@@ -954,6 +994,14 @@
           width: 220px;
         }
       }
+
+      @include breakpoint(lg) {
+        margin-left: 0;
+        .link-next-screen {
+          height: 170px;
+          padding-left: 50px;
+        }
+      }
     }
 
     .event-numbers {
@@ -1020,6 +1068,14 @@
             font-size: 17px;
             max-width: 102px;
           }
+        }
+      }
+
+      @include breakpoint(lg) {
+        transform: translateY(-20px);
+        .numbers-wrapper {
+          border-top: none;
+          border-bottom: none;
         }
       }
     }
@@ -1282,6 +1338,10 @@
         }
       }
     }
+
+    @include breakpoint(lg){
+      padding-bottom: 100px;
+    }
   }
 
   .services-img-left {
@@ -1300,6 +1360,9 @@
     @include breakpoint(xl) {
       max-width: 300px;
     }
+    @include breakpoint(lg) {
+      max-width: 270px;
+    }
   }
 
   .services-img-right {
@@ -1312,9 +1375,11 @@
     @include breakpoint(xxl) {
       max-width: 400px;
     }
-
     @include breakpoint(xl) {
       max-width: 300px;
+    }
+    @include breakpoint(lg) {
+      max-width: 270px;
     }
   }
 
@@ -1335,6 +1400,10 @@
 
       @include breakpoint(xxl) {
         font-size: 70px;
+      }
+
+      @include breakpoint(lg) {
+        font-size: 60px;
       }
     }
 
@@ -1815,6 +1884,7 @@
   .container {
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
 
   .section-shapes {
@@ -1841,7 +1911,6 @@
 
 .form-main-wrapper {
   max-width: 570px;
-  margin-top: 240px;
   margin-left: 12.5%;
 
   .h3 {
@@ -1924,6 +1993,18 @@
   height: 100vh;
 
   .section-shapes {
+    z-index: -1;
+  }
+
+  @include breakpoint(xl) {
+    height: 75vh;
+  }
+
+  @include breakpoint(lg) {
+    height: auto;
+  }
+
+  .section-shapes {
     transform: translateY(-5px);
   }
 
@@ -1983,17 +2064,26 @@
       }
     }
 
+    .date-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
     .date-event {
       max-width: unset;
       flex-wrap: nowrap;
       align-items: center;
-      margin-bottom: 50px;
+      margin-bottom: 5px;
+      width: 100%;
       .date-day {
         position: relative;
         font-family: $second-font-family;
         font-size: 60px;
         line-height: 1.0;
         font-weight: 500;
+        width: 40px;
+        text-align: right;
         &:after {
           position: absolute;
           right: -5px;
@@ -2007,15 +2097,29 @@
       .date-text {
         font-size: 16px;
         font-weight: 500;
-        line-height: 1.5 ;
+        line-height: 1.5;
+        background: $base-background;
+        padding-left: 2px;
       }
 
-      &:nth-child(2) {
+      &:nth-child(3) {
         .date-day {
           &:after {
             width: 90px;
+            margin-right: -10px;
           }
         }
+      }
+
+      &:nth-child(2n) {
+        .date-day {
+          &:after {
+            width: 0;
+          }
+        }
+      }
+      &:last-child {
+        margin-bottom: 0;
       }
     }
   }
@@ -2218,6 +2322,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @include breakpoint(lg) {
+      flex-basis: 50%;
+    }
 
     img {
       width: 100%;

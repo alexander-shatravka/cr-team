@@ -1,4 +1,6 @@
 .footer {
+  max-width: 1920px;
+  margin: 0 auto;
   .container {
     max-width: 1750px;
     padding: 30px 25px;
@@ -45,6 +47,11 @@
           margin-right: 0;
         }
       }
+    }
+
+    @include breakpoint(lg) {
+      flex-basis: 25%;
+      margin-bottom: 40px;
     }
   }
 
