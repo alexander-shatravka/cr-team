@@ -22,6 +22,6 @@
         $txt .= "<b>".$key."</b> ".$value."%0A";
     };
 
-    var_dump($txt);die();
+    var_dump($txt);
     $sendToTelegram = fopen("https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_id}&parse_mode=html&text={$txt}","r");
 ?>
