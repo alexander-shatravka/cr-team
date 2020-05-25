@@ -9,6 +9,7 @@ $(document).ready(function () {
   initCustomScroll();
   initAnchorsScroll();
   initMobileMenu();
+  initTelegramForms();
 });
 
 function initAnchorsScroll() {
@@ -255,4 +256,26 @@ function initFormFileAttachment() {
       });
     });
   }(document, window, 0));
+}
+
+function initTelegramForms() {
+  jQuery('#main-form-submit').on('click', function(e) {
+    e.preventDefault();
+    // initformValidation();
+    var errors = jQuery('#form-main .has-error');
+    if (errors.length) {
+      return false;
+    }
+    var form_data = jQuery('#form-main').serialize();
+    jQuery.ajax({ //telegram to admins
+      type: "POST",
+      url: "telegram.php",
+      data: form_data,
+      success: function() {
+        jQuery('.thank-massage').addClass('done');
+        setTimeout(function() { jQuery('.thank-massage').removeClass('done'); }, 3000);
+      },
+    });
+    return false;
+  })
 }
