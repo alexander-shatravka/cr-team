@@ -6,7 +6,7 @@
     $message = $_POST['message'];
     // $file = $_POST['file'];
 
-    $token = "696472715:AAEjwnDGbq27F6D6srHGHgNfJyXL_be5XTw";
+    $token = "1124038621:AAF0Zb5-5yi6D0mpA7EanhiYBVJdmvXFGWc";
     $chat_id = "-442444693";
 
     $arr = array(
