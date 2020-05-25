@@ -103,7 +103,7 @@
   @include breakpoint(md) {
     &.fixed {
       .container {
-        max-height: 60px;
+        max-height: 40px;
       }
     }
   }
@@ -310,7 +310,7 @@
       box-shadow: none!important;
 
       ul {
-        margin-top: 200px;
+        margin-top: 25vh;
         flex-direction: column;
         flex-wrap: nowrap;
         max-height: unset;
@@ -391,6 +391,10 @@
 
 .fixed {
   .burger-btn {
-    top: 15px;
+    top: 8px;
+
+    &.active {
+      top: 15px;
+    }
   }
 }

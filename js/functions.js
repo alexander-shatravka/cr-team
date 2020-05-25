@@ -22,23 +22,26 @@ function initAnchorsScroll() {
 }
 
 function initCustomScroll(){
-  jcf.replaceAll();
-  var enableScrollFocus = true;
 
-  $('.services-head-section .jcf-scrollable').on('scroll', function (e) {
-    e.preventDefault();
-      if(enableScrollFocus) {
-          e.preventDefault();
-          $('html, body').animate({
-              scrollTop: $('.services-head-section').offset().top - 60
-          }, 500);
-          enableScrollFocus = false;
-          return false;
+  if ($(window).width() > 768) {
+    jcf.replaceAll();
+    var enableScrollFocus = true;
+
+    $('.services-head-section .jcf-scrollable').on('scroll', function (e) {
+      e.preventDefault();
+      if (enableScrollFocus) {
+        e.preventDefault();
+        $('html, body').animate({
+          scrollTop: $('.services-head-section').offset().top - 60
+        }, 500);
+        enableScrollFocus = false;
+        return false;
       }
-  })
-  $('.services-head-section').on('mouseleave', function () {
+    })
+    $('.services-head-section').on('mouseleave', function () {
       enableScrollFocus = true;
-  })
+    })
+  }
 }
 
 function initFixedHeader() {
