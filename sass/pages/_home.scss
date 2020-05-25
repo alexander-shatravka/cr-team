@@ -1044,7 +1044,11 @@
         }
 
         @include breakpoint(lg) {
-          padding-right: 50px;
+          padding-right: 180px;
+
+          .h2 {
+            font-size: 65px;
+          }
         }
       }
 
@@ -1153,11 +1157,11 @@
     }
 
     .event-numbers {
-      padding: 0 100px 0 0;
+      padding: 0 30px 0 10px;
       transform: translateY(-80px);
 
       .numbers-wrapper {
-        padding: 40px 30px 40px 0;
+        padding: 40px 0 40px 0;
         border-top: 9px solid $black;
         border-bottom: 9px solid $black;
         display: flex;
@@ -1178,7 +1182,7 @@
 
         strong {
           font-family: $second-font-family;
-          font-size: 80px;
+          font-size: 70px;
           font-weight: 500;
           line-height: 1.0;
         }
@@ -1188,9 +1192,9 @@
           font-weight: 600;
           text-transform: uppercase;
           display: block;
-          max-width: 90px;
           line-height: 1.2;
           padding-bottom: 30px;
+          max-width: 180px;
         }
 
         &:last-child {
@@ -1206,15 +1210,14 @@
       }
 
       @include breakpoint(xxl){
-        padding: 0 50px 0 30px;
 
         .event-number-block {
           strong {
-            font-size: 70px;
+            font-size: 40px;
           }
           span {
             font-size: 17px;
-            max-width: 102px;
+            max-width: 50px;
           }
         }
       }
@@ -1225,20 +1228,34 @@
           border-top: none;
           border-bottom: none;
         }
+
+        .event-number-block {
+          strong {
+            font-size: 30px;
+            font-weight: 600;
+          }
+
+          span {
+            max-width: 40px;
+          }
+        }
       }
 
       @include breakpoint(md) {
+        padding-left: 0;
         .numbers-wrapper {
           flex-direction: row;
           padding-bottom: 0;
         }
 
         .event-number-block {
-          margin-right: 10px;
+          margin-right: 20px;
           span {
-            font-size: 16px;
-            max-width: 80px;
-
+            display: block;
+            font-size: 14px;
+            padding-top: 20px;
+            max-width: 120px;
+            height: 100px;
           }
           &:last-child {
             span {
@@ -2571,7 +2588,7 @@
         flex-basis: 100%;
         display: flex;
         flex-direction: column;
-        margin-top: 50px;
+        margin-top: 10px;
         text-decoration: none;
 
         img {
@@ -2582,6 +2599,7 @@
 
         .next-name {
           font-size: 23px;
+          display: none;
         }
 
         &:hover {
@@ -2598,7 +2616,7 @@
 .portfolio-grid {
   display: flex!important;
   flex-wrap: wrap;
-  transform: translateY(10px);
+  background: $yellow;
 
   .portfolio-item {
     flex-basis: 33.3333%;
@@ -2608,6 +2626,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background: $yellow;
 
     @include breakpoint(lg) {
       flex-basis: 50%;
@@ -2616,7 +2635,7 @@
     img {
       width: 100%;
       height: auto;
-      transform: scale(1.01);
+      transform: scale(1.03);
       transition: transform 0.3s ease;
     }
 
