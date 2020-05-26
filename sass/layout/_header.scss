@@ -265,6 +265,16 @@
         }
       }
 
+      @include breakpoint(xl) {
+        li {
+          padding-right: 30px;
+
+          a {
+            font-size: 17px;
+          }
+        }
+      }
+
       @include breakpoint(lg) {
         justify-content: flex-start;
 

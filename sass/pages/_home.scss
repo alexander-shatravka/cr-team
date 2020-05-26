@@ -1462,6 +1462,7 @@
   overflow: hidden;
 
   .services-slider {
+    padding-bottom: 150px;
 
     .section-shapes {
       transform: translateY(400px);
@@ -1473,6 +1474,10 @@
     height: calc(100vh);
     overflow-y: scroll;
     position: relative;
+
+    @include breakpoint(lg){
+      padding-bottom: 150px;
+    }
 
     @include breakpoint(md) {
       height: auto;
@@ -1529,10 +1534,6 @@
           }
         }
       }
-    }
-
-    @include breakpoint(lg){
-      padding-bottom: 30px;
     }
   }
 
