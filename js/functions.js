@@ -128,15 +128,15 @@ function initVideoSliders() {
     draggable: false,
     arrows: false,
   });
-  $('.portfolio-page .portfolio-grid-wrapper').slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    dots: false,
-    infinite: true,
-    speed: 750,
-    nextArrow: $('.portfolio-next'),
-    prevArrow: $('.portfolio-prev')
-  });
+  // $('.portfolio-page .portfolio-grid-wrapper').slick({
+  //   slidesToShow: 1,
+  //   slidesToScroll: 1,
+  //   dots: false,
+  //   infinite: true,
+  //   speed: 750,
+  //   nextArrow: $('.portfolio-next'),
+  //   prevArrow: $('.portfolio-prev')
+  // });
   $('.home-page .portfolio-grid-wrapper').slick({
     slidesToShow: 1,
     slidesToScroll: 1,

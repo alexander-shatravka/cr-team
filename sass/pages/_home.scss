@@ -2244,7 +2244,8 @@
   }
 
   @include breakpoint(xl) {
-    height: 75vh;
+    height: 85vh;
+    overflow: hidden;
   }
 
   @include breakpoint(lg) {
