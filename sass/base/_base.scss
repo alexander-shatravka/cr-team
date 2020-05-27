@@ -316,3 +316,35 @@ main {
     margin-bottom: 0;
   }
 }
+
+.thank-page {
+    main {
+        padding: 0;
+        margin: 0 auto;
+        width: 100vw;
+        overflow: hidden;
+    }
+}
+
+.section-thank-you {
+    height: 100vh;
+    max-height: 100vh!important;
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+
+    .form-main-wrapper {
+        margin-top: 0;
+
+        .h3 {
+            font-size: 60px;
+        }
+        .sub-title {
+            font-weight: 900;
+            font-size: 35px;
+            line-height: 1.5;
+            text-transform: uppercase;
+        }
+    }
+}
+

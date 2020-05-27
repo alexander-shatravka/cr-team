@@ -1482,6 +1482,7 @@
     @include breakpoint(md) {
       height: auto;
       overflow: visible;
+      padding-bottom: 30px;
     }
 
     .service-slide {
@@ -1729,17 +1730,120 @@
 
   .container {
     display: flex;
+    flex-wrap: wrap;
   }
 
   .price-title-row {
     display: flex;
     flex-wrap: wrap;
-    padding-top: 100px;
+    padding-left: 180px;
     padding-bottom: 100px;
+    flex-basis: 80%;
+
+    &:after {
+      @include shape-default(100vw, 100px, $yellow);
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      z-index: -1;
+    }
+
+    .h3 {
+      font-size: 115px;
+      line-height: 0.9;
+      width: 100vw;
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+
+    .small-p {
+      p {
+        font-size: 30px;
+        font-weight: 800;
+        max-width: 640px;
+      }
+    }
+
+    @include breakpoint(xxl) {
+      flex-basis: 60%;
+      padding-left: 8%;
+      padding-bottom: 30px;
+
+      .h3 {
+        font-size: 65px;
+        font-weight: 900;
+        margin: 25px 0;
+      }
+
+      .small-p {
+        p {
+          font-size: 20px;
+          max-width: 60%;
+        }
+      }
+    }
+
+    @include breakpoint(md) {
+      padding-left: 0;
+
+      .h3 {
+        font-size: 45px;
+        line-height: 1.2;
+      }
+
+      .small-p {
+        p {
+          max-width: 95%;
+          font-size: 18px;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+
+  .price-img {
+    flex-basis: 100%;
+    max-width: 1175px;
+    overflow: hidden;
+
+    @include breakpoint(xxl) {
+      max-width: 60%;
+    }
+
+    @include breakpoint(md) {
+      max-width: calc(100vw - 30px);
+    }
+  }
+
+  .pricing-column {
+    flex-basis: 50%;
+    position: absolute;
+    left: 62%;
+    top: 60px;
+
+    @include breakpoint(xxl) {
+      left: auto;
+      right: 2%;
+    }
+
+    @include breakpoint(lg) {
+      right: 0;
+    }
+
+    @include breakpoint(md) {
+      position: static;
+      order: -1;
+    }
 
     .price-num {
-      padding-left: 150px;
       padding-right: 50px;
+      position: relative;
+
+      &:before {
+        @include shape-default(56px, 16px, $black);
+        margin-bottom: 50px;
+      }
+
       span {
         line-height: 1.1;
         font-weight: 600;
@@ -1753,26 +1857,31 @@
         font-weight: 600;
         display: block;
         font-family: $second-font-family;
-        color: $white;
+        margin-bottom: 20px;
+      }
+
+      @include breakpoint(xxl) {
+        span {
+          font-size: 22px;
+        }
+        strong {
+          font-size: 80px;
+        }
+      }
+
+      @include breakpoint(lg) {
+        padding-right: 20px;
+      }
+
+      @include breakpoint(md) {
+        width: 100vw;
+        margin-bottom: 20px;
+
+        &:before {
+          margin-bottom: 35px;
+        }
       }
     }
-
-    .h3 {
-      font-size: 110px;
-      line-height: 0.9;
-      padding-left: 50px;
-    }
-  }
-
-  .price-img {
-    flex-basis: 100%;
-    max-width: 1175px;
-    overflow: hidden;
-  }
-
-  .pricing-column {
-    flex-basis: 50%;
-    padding-top: 140px;
 
     .strong-p {
       p {
@@ -1824,15 +1933,17 @@
 
   .link-next-screen {
     cursor: pointer;
-    position: absolute;
-    right: 200px;
-    bottom: 50px;
+    right: 14%;
+    bottom: 40px;
     width: 20%;
     display: flex;
     align-items: flex-start;
     justify-content: space-around;
-    height: 120px;
+    height: 130px;
+    padding: 35px;
     overflow: hidden;
+    position: absolute;
+
 
     span {
       font-size: 28px;
@@ -1841,6 +1952,16 @@
       padding-bottom: 35px;
       line-height: 1;
       font-weight: 600;
+    }
+
+    @include breakpoint(xl) {
+      right: 2%;
+      bottom: 0;
+      width: auto;
+    }
+
+    @include breakpoint(md) {
+      display: none;
     }
   }
 }
@@ -2124,6 +2245,8 @@
     left: 0;
     top: -5px;
     z-index: -1;
+
+    width: auto;
   }
 }
 
@@ -2442,6 +2565,7 @@
 
   .section-shapes {
     position: absolute;
+    width: 60%;
   }
 
   .container {

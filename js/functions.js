@@ -16,6 +16,8 @@ function initAnchorsScroll() {
   $(document).on('click', 'a.anchor-link[href^="#"]', function (event) {
     event.preventDefault();
 
+    $('.main-nav').removeClass('mobile-show');
+
     $('html, body').animate({
       scrollTop: $($.attr(this, 'href')).offset().top
     }, 500);
@@ -272,7 +274,8 @@ function initTelegramForms() {
       url: "telegram.php",
       data: form_data,
       success: function() {
-        jQuery('.thank-massage').addClass('done');
+        // jQuery('.thank-massage').addClass('done');
+        location = '/thank-page.html';
         setTimeout(function() { jQuery('.thank-massage').removeClass('done'); }, 3000);
       },
     });
