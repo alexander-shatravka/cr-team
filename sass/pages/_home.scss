@@ -1460,19 +1460,46 @@
 
 .services-row {
   overflow: hidden;
+  position: relative;
+
+  &:after {
+    @include shape-default(100%, 70px, $yellow);
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+
+    @include breakpoint(md) {
+      height: 30px;
+    }
+  }
+
 
   .services-slider {
     padding-bottom: 150px;
+    display: flex;
+    flex-direction: column;
+
+    &:before {
+      @include shape-default(4%, 100%, $yellow);
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: -1;
+    }
+    &:after {
+      @include shape-default(4%, 100%, $yellow);
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: -1;
+    }
 
     .section-shapes {
-      transform: translateY(400px);
-      max-height: 230vh;
+      //transform: translateY(400px);
       overflow-y: hidden;
       z-index: -1;
     }
 
-    height: calc(100vh);
-    overflow-y: scroll;
     position: relative;
 
     @include breakpoint(lg){
@@ -1727,6 +1754,7 @@
 
 .section-price {
   padding: 0;
+  transform: translateY(-2px);
 
   .container {
     display: flex;
@@ -1876,6 +1904,7 @@
       @include breakpoint(md) {
         width: 100vw;
         margin-bottom: 20px;
+        padding-top: 30px;
 
         &:before {
           margin-bottom: 35px;
@@ -2743,6 +2772,8 @@
   display: flex!important;
   flex-wrap: wrap;
   background: $yellow;
+  align-items: flex-end;
+  justify-content: flex-end;
 
   .portfolio-item {
     flex-basis: 33.3333%;
@@ -2769,6 +2800,20 @@
 
       img {
         transform: scale(1.07);
+      }
+    }
+
+    &.item-full {
+      height: calc(100vh - 100px);
+      max-height: calc(100vh);
+      transform: translateY(50%);
+
+      img {
+        height: 100%;
+      }
+
+      @include breakpoint(md) {
+        display: none;
       }
     }
   }

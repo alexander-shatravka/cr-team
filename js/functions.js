@@ -6,10 +6,11 @@ $(document).ready(function () {
   initFormCustomPlaceholder();
   // initSrollUpCtaButton();
   initFormFileAttachment();
-  initCustomScroll();
+  // initCustomScroll();
   initAnchorsScroll();
   initMobileMenu();
   initTelegramForms();
+  initPrivacyPolicy();
 });
 
 function initAnchorsScroll() {
@@ -275,10 +276,19 @@ function initTelegramForms() {
       data: form_data,
       success: function() {
         // jQuery('.thank-massage').addClass('done');
-        location = '/thank-page.html';
+        location = '/thank-you.html';
         setTimeout(function() { jQuery('.thank-massage').removeClass('done'); }, 3000);
       },
     });
     return false;
   })
 }
+
+function initPrivacyPolicy(){
+  $('.btn-agree-policy').click(function(e){
+    e.preventDefault();
+    $(this).parents('.privacy-policy').removeClass('show');
+    localStorage['policy'] = 'agree';
+  })
+}
+
