@@ -2745,6 +2745,7 @@
         flex-direction: column;
         margin-top: 10px;
         text-decoration: none;
+        cursor: pointer;
 
         img {
           width: 180px;
@@ -2772,8 +2773,6 @@
   display: flex!important;
   flex-wrap: wrap;
   background: $yellow;
-  align-items: flex-end;
-  justify-content: flex-end;
 
   .portfolio-item {
     flex-basis: 33.3333%;
@@ -2792,15 +2791,22 @@
     img {
       width: 100%;
       height: auto;
-      transform: scale(1.03);
+      transform: scale(1.01);
       transition: transform 0.3s ease;
     }
 
-    &:hover {
+    //&:hover {
+    //  img {
+    //    transform: scale(1.07);
+    //  }
+    //}
 
-      img {
-        transform: scale(1.07);
-      }
+    &.post-bottom {
+      align-items: flex-end;
+    }
+
+    &.post-top {
+      align-items: flex-start;
     }
 
     &.item-full {
@@ -2817,4 +2823,10 @@
       }
     }
   }
+
+  //&.cases {
+  //  .portfolio-item {
+  //    border: 1px solid $yellow;
+  //  }
+  //}
 }

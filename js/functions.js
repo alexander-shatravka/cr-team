@@ -11,6 +11,7 @@ $(document).ready(function () {
   initMobileMenu();
   initTelegramForms();
   initPrivacyPolicy();
+  initPortfolioClickHandler();
 });
 
 function initAnchorsScroll() {
@@ -289,6 +290,12 @@ function initPrivacyPolicy(){
     e.preventDefault();
     $(this).parents('.privacy-policy').removeClass('show');
     localStorage['policy'] = 'agree';
+  })
+}
+
+function initPortfolioClickHandler() {
+  $('.portfolio-item').on('click', function (e) {
+    e.preventDefault();
   })
 }
 
