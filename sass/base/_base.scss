@@ -386,13 +386,17 @@ main {
 
     @include breakpoint(md) {
         flex-direction: column;
-        padding-bottom: 30px;
+        padding: 15px;
 
         .privacy-txt {
             flex-basis: 100%;
             max-width: 100%;
-            margin-bottom: 20px;
-            font-size: 16px;
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+
+        .main-btn {
+            padding: 6px 20px;
         }
     }
 }
