@@ -2797,7 +2797,7 @@
     justify-content: center;
     background: $yellow;
 
-    @include breakpoint(md) {
+    @include breakpoint(sm) {
       width: 50%;
     }
 
