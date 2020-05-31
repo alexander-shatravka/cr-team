@@ -2348,6 +2348,10 @@
         &:focus {
           border-color: $white;
         }
+
+        &.has-error {
+          border-color: #ff0000;
+        }
       }
     }
   }
@@ -2368,7 +2372,7 @@
 
   @include breakpoint(lg) {
     margin-left: 3%;
-    margin-top: 70px;
+    margin-top: 0px;
 
     .main-btn {
       margin-top: 50px;
@@ -2376,7 +2380,7 @@
   }
 
   @include breakpoint(md) {
-    margin-top: 30px;
+    margin-top: 0;
     padding: 70px 0;
     margin-left: 0;
 
@@ -2771,21 +2775,30 @@
 
 .portfolio-grid {
   display: flex!important;
+  flex-direction: column;
   flex-wrap: wrap;
   background: $yellow;
+  max-height: 100vh;
+
+  @include breakpoint(lg) {
+    max-height: 70vh;
+  }
+
+  @include breakpoint(md) {
+    max-height: 85vh;
+  }
 
   .portfolio-item {
-    flex-basis: 33.3333%;
+    flex-basis: 50%;
     width: 33.3333%;
-    max-height: calc(50vh - 50px);
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
     background: $yellow;
 
-    @include breakpoint(lg) {
-      flex-basis: 50%;
+    @include breakpoint(md) {
+      width: 50%;
     }
 
     img {
@@ -2810,9 +2823,7 @@
     }
 
     &.item-full {
-      height: calc(100vh - 100px);
-      max-height: calc(100vh);
-      transform: translateY(50%);
+      flex-basis: 100%;
 
       img {
         height: 100%;
