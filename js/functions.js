@@ -9,6 +9,8 @@ $(document).ready(function () {
   // initCustomScroll();
   initAnchorsScroll();
   initMobileMenu();
+  initFormValidation();
+  initRemoveErr();
   initTelegramForms();
   initPrivacyPolicy();
   initPortfolioClickHandler();
@@ -27,7 +29,6 @@ function initAnchorsScroll() {
 }
 
 function initCustomScroll(){
-
   if ($(window).width() > 768) {
     jcf.replaceAll();
     var enableScrollFocus = true;
@@ -265,7 +266,7 @@ function initFormFileAttachment() {
 function initTelegramForms() {
   jQuery('#main-form-submit').on('click', function(e) {
     e.preventDefault();
-    // initformValidation();
+    initFormValidation();
     var errors = jQuery('#form-main .has-error');
     if (errors.length) {
       return false;
@@ -283,6 +284,47 @@ function initTelegramForms() {
     });
     return false;
   })
+}
+
+function initFormValidation() {
+  jQuery('#main-form-submit').on('click', function(e) {
+    e.preventDefault();
+    var name = jQuery(this).parents('form').find('input[name="name"]');
+    var tel = jQuery(this).parents('form').find('input[name="phone"]');
+    // var email = jQuery(this).parents('form').find('input[name=email]');
+
+    if (name.val()=='') {
+      name.addClass('has-error');
+    } else name.removeClass('has-error');
+
+    if (tel.val()=='') {
+      tel.addClass('has-error');
+    } else tel.removeClass('has-error');
+
+    // if (email.val()=='') {
+    //     email.addClass('error');
+    // } else email.removeClass('error');
+  });
+}
+
+function initRemoveErr(){
+  jQuery('input[name=name],input[name=email],input[name=phone]').focusout(function(){
+    var name = jQuery(this).parents('form').find('input[name=name]');
+    var tel = jQuery(this).parents('form').find('input[name=phone]');
+    // var email = jQuery(this).parents('form').find('input[name=email]');
+
+    if (name.val()=='') {
+      name.addClass('has-error');
+    } else name.removeClass('has-error');
+
+    if (tel.val()=='') {
+      tel.addClass('has-error');
+    } else tel.removeClass('has-error');
+
+    // if (email.val()=='') {
+    //   email.addClass('has-error');
+    // } else email.removeClass('has-error');
+  });
 }
 
 function initPrivacyPolicy(){
